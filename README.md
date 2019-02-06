@@ -39,3 +39,9 @@ Learning React and ES6 by building a Movie Discovery App.
 ---
 
 Try it on netlify
+
+---
+
+색감 - https://flatuicolors.com/palette/defo
+data api - https://www.themoviedb.org/?language=ko-KR
+--> 회원가입 --> profile photo --> API --> API key V3복사
