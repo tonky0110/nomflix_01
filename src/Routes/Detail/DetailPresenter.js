@@ -1,5 +1,5 @@
 import React from "react";
 
-export default DetailPresenter = () => (
-    <div>Detail Presenter</div>;
-);
+const DetailPresenter = () => <div>Detail Presenter</div>;
+
+export default DetailPresenter;
