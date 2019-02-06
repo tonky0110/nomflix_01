@@ -20,7 +20,9 @@ https://developers.themoviedb.org/3/getting-started/introduction
 - [ ] Top Rated (TV)
 - [ ] Popular (TV, X)
 - [ ] Airing Today (TV)
-- [ ] Tv show Detail(TV, Movie)
+- [ ] Tv show Detail
+- [ ] Movie Detail
+- [ ] Search(TV, Movie)
 
 ---
 
