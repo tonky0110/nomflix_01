@@ -13,11 +13,14 @@ Learning React and ES6 by building a Movie Discovery App.
 
 ## API Verbs
 
+https://developers.themoviedb.org/3/getting-started/introduction
+
 - [ ] Now playing (Movie)
 - [ ] Upcoming (Movie)
-- [ ] Top Rated (TV, Movie)
-- [ ] Popular (TV, Movie)
+- [ ] Top Rated (TV)
+- [ ] Popular (TV, X)
 - [ ] Airing Today (TV)
+- [ ] Tv show Detail(TV, Movie)
 
 ---
 
