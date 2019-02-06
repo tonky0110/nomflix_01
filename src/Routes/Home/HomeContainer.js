@@ -1,5 +1,5 @@
 import React from "react";
-import { movieApi, tvApi } from "api";
+import { moviesApi } from "api";
 import HomePresenter from "./HomePresenter.js";
 
 export default class HomeContainer extends React.Component {
@@ -7,25 +7,25 @@ export default class HomeContainer extends React.Component {
     nowPlaying: null,
     upcoming: null,
     popular: null,
-    error: null,
-    loading: true
+    loading: true,
+    error: null
   };
 
-  async componentDidMount() {
+  componentDidMount = async () => {
     try {
       const {
         data: { results: nowPlaying }
-      } = await movieApi.nowPlaying();
+      } = await moviesApi.nowPlaying();
       // console.log(nowPlaying);
 
       const {
         data: { results: upcoming }
-      } = await movieApi.upcoming();
+      } = await moviesApi.upcoming();
       // console.log(upcoming);
 
       const {
         data: { results: popular }
-      } = await movieApi.popular();
+      } = await moviesApi.popular();
       // console.log(popular);
       this.setState({
         nowPlaying,
@@ -34,16 +34,17 @@ export default class HomeContainer extends React.Component {
       });
     } catch {
       this.setState({
-        error: "Can't find movies information."
+        error: "Can't find movie information."
       });
     } finally {
       this.setState({
         loading: false
       });
     }
-  }
+  };
   render() {
-    const { nowPlaying, upcoming, popular, error, loading } = this.state;
+    const { nowPlaying, upcoming, popular, loading, error } = this.state;
+    console.log(nowPlaying, upcoming, popular, loading, error);
     return (
       <HomePresenter
         nowPlaying={nowPlaying}
