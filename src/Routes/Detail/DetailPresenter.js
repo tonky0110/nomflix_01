@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Helmet from 'react-helmet';
 import Loader from 'Components/Loader';
+import Message from 'Components/Message';
 
 const Container = styled.div`
 	height: calc(100vh - 50px);
@@ -19,8 +21,8 @@ const Backdrop = styled.div`
 	background-image: url(${(props) => props.bgImage});
 	background-position: center center;
 	background-size: cover;
-	filter: blur(3px);
-	opacity: 0.5;
+	filter: blur(5px);
+	opacity: 0.3;
 `;
 
 const Content = styled.div`
@@ -61,9 +63,18 @@ const Overvie = styled.div`
 
 const DetailPresenter = ({ result, loading, error }) =>
 	loading ? (
-		<Loader />
+		<>
+			<Helmet>
+				<title>Loading | Nomflix</title>
+			</Helmet>
+			<Loader />
+		</>
 	) : (
-		<Container>
+		error ? <Message color='#e74c3c' text="Error" /> : 
+		(<Container>
+			<Helmet>
+				<title>{result.original_title ? result.original_title : result.original_name} | Nomflix</title>
+			</Helmet>
 			<Backdrop bgImage={`https://image.tmdb.org/t/p/original${result.backdrop_path}`} />
 			<Content>
 				<Cover
@@ -99,7 +110,7 @@ const DetailPresenter = ({ result, loading, error }) =>
 					<Overvie>{result.overview}</Overvie>
 				</Data>
 			</Content>
-		</Container>
+		</Container>)
 	);
 
 DetailPresenter.propTypes = {
