@@ -27,6 +27,7 @@ export default class HomeContainer extends React.Component {
         data: { results: popular }
       } = await moviesApi.popular();
       // console.log(popular);
+      // throw Error();
       this.setState({
         nowPlaying,
         upcoming,

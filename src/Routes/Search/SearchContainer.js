@@ -32,7 +32,7 @@ export default class SearchContainer extends React.Component {
       const {
         data: { results: tvResults }
       } = await tvApi.search(searchTerm);
-      console.log(movieResults, tvResults);
+      
       this.setState({
         movieResults,
         tvResults
@@ -42,6 +42,8 @@ export default class SearchContainer extends React.Component {
     } finally {
       this.setState({ loading: false });
     }
+    const { movieResults, tvResults, error } = this.state;
+    console.log("movieResults: ", movieResults, ', tvResults: ', tvResults, ', error: ', error);
   };
   render() {
     const { movieResults, tvResults, searchTerm, loading, error } = this.state;
